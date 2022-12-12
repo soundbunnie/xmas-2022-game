@@ -221,7 +221,9 @@ let look = () => {
 
 // look in the passed way
 // string -> nothing
-let lookThusly = (str) => println(`You look ${str}.`);
+let lookThusly = (str) => {
+  const room = getRoom(disk.roomId);
+  println(`${room.name}, ${room.desc}`);}
 
 // look at the passed item or character
 // array -> nothing
@@ -249,7 +251,6 @@ let lookAt = (args) => {
       } else {
         println(`You don't notice anything remarkable about them.`);
       }
-
       if (typeof(character.onLook) === 'function') {
         character.onLook({disk, println, getRoom, enterRoom, item});
       }
@@ -768,7 +769,7 @@ let applyInput = (input) => {
     useItem(arguments[0]);
   } else if (arguments.length >= commands.length) {
     exec(commands[commands.length - 1][command], arguments);
-  } else if (room.exits && getExit(command, room.exits)) {
+  }else if (room.exits && getExit(command, room.exits)) {
     // handle shorthand direction command, e.g. "EAST" instead of "GO EAST"
     goDir(command);
   } else if (disk.conversation && (disk.conversation[command] || conversationIncludesTopic(disk.conversation, command))) {

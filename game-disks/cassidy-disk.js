@@ -75,7 +75,7 @@ const cassidyDisk = () => ({
                 println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
-        {name: ['pepper', 'cat'],
+        {name: ['pepper', 'cat', 'kitten', 'asshole'],
         desc: 'He\'s sleeping peacefully under the tree.',
         onLook(){
             let room = getRoom(disk.roomId);
