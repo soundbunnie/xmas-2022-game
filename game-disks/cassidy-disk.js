@@ -49,10 +49,23 @@ const cassidyDisk = () => ({
                                                                                                             
       `,
       desc: `
-        
+        You are sitting on your new couch watching TV. It took quite a lot of waiting and coordinating to get the damn thing here, but your patience has finally paid off.
+
+        To your right sits an immaculately decorated Christmas tree. Underneath it lies an adorable little kitten named Pepper.
       `,
+      onEnter(){
+        let itemsExamined = [];
+      },
       items: [
-        { name: 'castle', desc: 'It\'s quite impressive.' },
+        { name: ['TV', 'Television'], 
+        desc: 'It\'s playing Scooby Doo: Mystery Incorporated.',
+        onTake(){println('Where are you going to put it? Your pockets?')}},
+        {name: ['pepper', 'cat'], 
+        desc: 'He\'s sleeping peacefully. Thank God.',
+        onTake(){println('As much as you\'d love that, he would most likely just get away.')}},
+        {name: ['tree', 'christmas tree'],
+        desc: "Its warm lights are comforting to you.",
+        onTake(){println('A noble idea.')}}
       ],
       exits: [
         { dir: 'north', id: 'endOfTheWorld' }     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
