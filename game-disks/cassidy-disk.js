@@ -96,31 +96,14 @@ const cassidyDisk = () => ({
         onTake(){println('A noble idea.')}}
       ],
       exits: [
-        { dir: 'north', id: 'endOfTheWorld', block: "You feel as though you're forgetting something...", }     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
+        { dir: 'north', id: 'bedroom', block: "You feel as though you're forgetting something...", }     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
       ]
     },
     {
-      name: 'The End of the World',
-      id: 'endOfTheWorld',
-      img: `
-               T~~
-               |
-              /█\\
-      0~1     1'1 0~~
-  0~~ 1    0~ 010 1
-  1  /█\\   1  1 1 /\\T~~
- /█\\ 010  /█\\ 1' |0|
-0000/\\| 0   \\|'/\\|/█\\
-|   1__\\/_101_\\/__\\0110
-\\█  11WW'|_0_|'0011'  /
- 1  1' |/  -  \\|' |' |
- 10 |  |1011000|' |  1
- 1  |' | |[-0| |  |' 0
- 0  |  | 10-]| |  |  1
-'0--'--'-/___\\-'1101--'
-      `,
+      name: 'BEDROOM',
+      id: 'bedroom',
       desc: `
-        I don't know how you got here, but you definitely don't belong here. This is the End of the World. You already saved the k†ngdøm. It's time for you to leave.
+        This is your bedroom. Home sweet home. \nOn the wall to the right of your desk, you see your trusty calendar. \nYou hear aggressive snorthing coming from your bed.
       `,
       // This is just here as an example of how you can use the onEnter property.
       // This gets called when the player enters the room.
