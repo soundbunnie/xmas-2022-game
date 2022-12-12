@@ -67,6 +67,7 @@ const cassidyDisk = () => ({
             if (itemsExamined.length === 3){
                 const exit = getExit('north', room.exits);
                 delete exit.block;
+                
                 println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
@@ -81,7 +82,10 @@ const cassidyDisk = () => ({
                 delete exit.block;
                 println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
-        onTake(){println('As much as you\'d love that, he would most likely just get away.')}},
+        onTake(){
+            println('As you pick him up, he sinks his teeth into your skin. You yelp and put him down, but the damage is done. Your hand now has a bite mark with a tiny bit of blood on it.')
+            var isBitten = true;
+            var isBleeding = true;}},
         {name: ['tree', 'christmas tree'],
         onLook(){
             let room = getRoom(disk.roomId);
