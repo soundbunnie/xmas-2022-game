@@ -47,6 +47,7 @@ body::after {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  line-height: 20.67px;
 }
 
 #output {
@@ -73,7 +74,7 @@ a {
   font-size: 2vh;
   font-family: "Apple II";
   border: none;
-  position: relative;
+  position: sticky;
   bottom: 0.175vh;
   margin-left: .5vw;
 }
