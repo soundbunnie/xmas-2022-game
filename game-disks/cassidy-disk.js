@@ -5,6 +5,10 @@ bullet = '&ast;';
 
 var itemsExamined = [];
 
+// variables to be used later
+var isBitten = false;
+var isBleeding = false;
+
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
 LOOK AT [OBJECT NAME] e.g. 'look at key'
@@ -71,10 +75,13 @@ const cassidyDisk = () => ({
                 println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
-        {name: ['pepper', 'cat'], 
+        {name: ['pepper', 'cat'],
         desc: 'He\'s sleeping peacefully. Thank God.',
         onLook(){
             let room = getRoom(disk.roomId);
+            if (isBitten){
+                println('He\'s under the tree again. Seeing his tiny, sleeping face makes it hard to stay mad at him.')
+            }
             if (!itemsExamined.includes('Pepper')){
                 itemsExamined.push("Pepper")}
             if (itemsExamined.length === 3){
@@ -84,8 +91,8 @@ const cassidyDisk = () => ({
             }},
         onTake(){
             println('As you pick him up, he sinks his teeth into your skin. You yelp and put him down, but the damage is done. Your hand now has a bite mark with a tiny bit of blood on it.')
-            var isBitten = true;
-            var isBleeding = true;}},
+            isBitten = true;
+            isBleeding = true;}},
         {name: ['tree', 'christmas tree'],
         onLook(){
             let room = getRoom(disk.roomId);
