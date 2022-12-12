@@ -67,6 +67,7 @@ const cassidyDisk = () => ({
             if (itemsExamined.length === 3){
                 const exit = getExit('north', room.exits);
                 delete exit.block;
+                println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
         {name: ['pepper', 'cat'], 
@@ -78,6 +79,7 @@ const cassidyDisk = () => ({
             if (itemsExamined.length === 3){
                 const exit = getExit('north', room.exits);
                 delete exit.block;
+                println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){println('As much as you\'d love that, he would most likely just get away.')}},
         {name: ['tree', 'christmas tree'],
@@ -88,6 +90,7 @@ const cassidyDisk = () => ({
                 if (itemsExamined.length === 3){
                     const exit = getExit('north', room.exits);
                     delete exit.block;
+                    println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
                 }},
         desc: "Its warm lights are comforting to you.",
         onTake(){println('A noble idea.')}}
