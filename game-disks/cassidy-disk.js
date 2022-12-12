@@ -76,11 +76,11 @@ const cassidyDisk = () => ({
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
         {name: ['pepper', 'cat'],
-        desc: 'He\'s sleeping peacefully. Thank God.',
+        desc: 'He\'s sleeping peacefully under the tree.',
         onLook(){
             let room = getRoom(disk.roomId);
             if (isBitten){
-                println('He\'s under the tree again. Seeing his tiny, sleeping face makes it hard to stay mad at him.')
+                println('Even if he\'s an asshole, seeing his tiny, sleeping face makes it hard to stay mad at him.')
             }
             if (!itemsExamined.includes('Pepper')){
                 itemsExamined.push("Pepper")}
