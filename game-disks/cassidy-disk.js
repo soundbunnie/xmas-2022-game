@@ -1,6 +1,10 @@
 // customize the appearance of the bullets
 bullet = '&ast;';
 
+// keep track of examined items
+
+var itemsExamined = [];
+
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
 LOOK AT [OBJECT NAME] e.g. 'look at key'
@@ -53,22 +57,43 @@ const cassidyDisk = () => ({
 
         To your right sits an immaculately decorated Christmas tree. Underneath it lies an adorable little kitten named Pepper.
       `,
-      onEnter(){
-        let itemsExamined = [];
-      },
       items: [
         { name: ['TV', 'Television'], 
         desc: 'It\'s playing Scooby Doo: Mystery Incorporated.',
+        onLook(){
+            let room = getRoom(disk.roomId);
+            if (!itemsExamined.includes('Television')){
+                itemsExamined.push("Television")};
+            if (itemsExamined.length === 3){
+                const exit = getExit('north', room.exits);
+                delete exit.block;
+            }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
         {name: ['pepper', 'cat'], 
         desc: 'He\'s sleeping peacefully. Thank God.',
+        onLook(){
+            let room = getRoom(disk.roomId);
+            if (!itemsExamined.includes('Pepper')){
+                itemsExamined.push("Pepper")}
+            if (itemsExamined.length === 3){
+                const exit = getExit('north', room.exits);
+                delete exit.block;
+            }},
         onTake(){println('As much as you\'d love that, he would most likely just get away.')}},
         {name: ['tree', 'christmas tree'],
+        onLook(){
+            let room = getRoom(disk.roomId);
+            if (!itemsExamined.includes('Christmas Tree')){
+                itemsExamined.push("Christmas Tree")}
+                if (itemsExamined.length === 3){
+                    const exit = getExit('north', room.exits);
+                    delete exit.block;
+                }},
         desc: "Its warm lights are comforting to you.",
         onTake(){println('A noble idea.')}}
       ],
       exits: [
-        { dir: 'north', id: 'endOfTheWorld' }     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
+        { dir: 'north', id: 'endOfTheWorld', block: "You feel as though you're forgetting something...", }     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
       ]
     },
     {
