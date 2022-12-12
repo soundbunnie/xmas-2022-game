@@ -19,12 +19,12 @@ document.getElementById('styles').setAttribute('href', 'styles/retro.css');
 document.body.style.color = "#00FFFF";
 
 const cassidyDisk = () => ({
-  roomId: 'playerHouse',        // The room the player is currently in. Set this to the room you want the player to start in.
+  roomId: 'playerLivingRoom',        // The room the player is currently in. Set this to the room you want the player to start in.
   inventory: [],             // You can add any items you want the player to start with here.
   rooms: [
     {
-      name: 'YOUR HOUSE',     // This will be displayed each time the player enters the room.
-      id: 'playerHouse',        // The unique identifier for this room. Entering a room will set the disk's roomId to this.
+      name: 'LIVING ROOM',     // This will be displayed each time the player enters the room.
+      id: 'playerLivingRoom',        // The unique identifier for this room. Entering a room will set the disk's roomId to this.
       img: `
       ░█████╗░░█████╗░░██████╗░██████╗██╗██████╗░██╗░░░██╗██╗░██████╗
       ██╔══██╗██╔══██╗██╔════╝██╔════╝██║██╔══██╗╚██╗░██╔╝╚█║██╔════╝
@@ -42,8 +42,7 @@ const cassidyDisk = () => ({
                                                                                                             
       `,
       desc: `
-        Congratulations, IkariDude09! You have defeated the evil emperor Zylzyx and restored peace to the k†ngdøm.
-        You have no quests left to complete. Stay tuned for more adventures from SquigglySoft!
+        
       `,
       items: [
         { name: 'castle', desc: 'It\'s quite impressive.' },
