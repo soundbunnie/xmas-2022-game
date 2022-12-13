@@ -124,8 +124,14 @@ const cassidyDisk = () => ({
         onTake(){println('A noble idea.')}}
       ],
       exits: [
-        { dir: 'north', id: 'bedroom', block: "You feel as though you're forgetting something...", }     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
+        { dir: 'north', id: 'bedroom', block: "You feel as though you're forgetting something...", },     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
+        { dir : 'east', id: 'bathroom'}
       ]
+    },
+    {
+      name: 'BATHROOM',
+      id: 'bathroom',
+      desc: 'Your bathroom.'
     },
     {
       name: 'BEDROOM',
