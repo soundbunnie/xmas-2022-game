@@ -175,8 +175,16 @@ const cassidyDisk = () => ({
         },
         onUse(){
           println('Um... You can if you really want to, I suppose.')
+        }},
+        {name: ['shower', 'bath'],
+        desc: 'Two loofahs are hung on the wall and lines of various shampoos and conditioners line the rims of the bathtub.',
+        onTake(){
+          println('Now\'s probably not the time for a shower.')
+        },
+        onUse(){
+          println('Now\'s probably not the time for a shower.')
         }
-      },
+      }
       ],
       exits: [
         {dir: ['west', 'living room'], id: 'playerLivingRoom'}
