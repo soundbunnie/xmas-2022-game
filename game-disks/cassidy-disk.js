@@ -147,6 +147,9 @@ const cassidyDisk = () => ({
             isBleeding = false;
             isBandaged = true;
           }
+          else{
+            println('Thankfully, you see no reason that you would need anything from in there.')
+          }
         }}
       ],
       exits: [
