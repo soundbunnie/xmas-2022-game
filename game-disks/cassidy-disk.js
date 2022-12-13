@@ -133,7 +133,7 @@ const cassidyDisk = () => ({
     {
       name: 'BATHROOM',
       id: 'bathroom',
-      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought. \n Above the toilet is a shelf holding your toilet paper, paper towels and a first aid kit.\nThere is also, naturally, a sink with a mirror above it.',
+      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought. \n Above the toilet is a shelf holding your paper towels and a first aid kit.\nThere is also, naturally, a sink with a mirror above it.',
       items: [
         {name: 'first aid kit',
         desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
@@ -162,16 +162,6 @@ const cassidyDisk = () => ({
           toiletUsed = true;
         }
         },
-        {name: 'toilet paper',
-        desc: 'Full roll of toilet paper. Triple ply.',
-        isTakeable: true,
-        onTake(){
-          println('Could come in handy.')
-        },
-        onUse(){
-
-        }
-      }
       ],
       exits: [
         {dir: ['west', 'living room'], id: 'playerLivingRoom'}
