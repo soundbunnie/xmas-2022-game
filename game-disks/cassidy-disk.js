@@ -162,7 +162,7 @@ const cassidyDisk = () => ({
           toiletUsed = true;
         }
         },
-        {name: 'paper towel',
+        {name: ['paper towel', 'paper towels'],
         desc: 'Always runs out too soon.',
         isTakeable: true,
         onTake(){
