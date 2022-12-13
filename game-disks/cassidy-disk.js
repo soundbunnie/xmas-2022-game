@@ -185,10 +185,7 @@ const cassidyDisk = () => ({
           println('Now\'s probably not the time for a shower.')
         }},
         {name: 'mirror',
-        desc: 'Shiny and squeaky clean.',
-        onLook(){
-          println('You stare at your reflection. Looking good.')
-        },
+        desc: 'You stare at your reflection. Looking good.',
         onTake(){
           println('It\'s not that kind of mirror.')
         }},
