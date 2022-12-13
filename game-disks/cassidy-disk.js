@@ -167,6 +167,14 @@ const cassidyDisk = () => ({
         isTakeable: true,
         onTake(){
           println('Could come in handy.')
+        }},
+        {name: ['litter box', 'litter', 'litterbox'],
+        desc: 'It\'s clean.',
+        onTake(){
+          println('You decide your time could be better spent.')
+        },
+        onUse(){
+          println('Um... You can if you really want to, I suppose.')
         }
       },
       ],
