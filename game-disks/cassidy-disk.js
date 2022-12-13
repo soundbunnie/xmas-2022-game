@@ -205,6 +205,12 @@ const cassidyDisk = () => ({
             println('Your hands aren\'t dirty, but washing them couldn\'t hurt.')
           }
         }},
+        {name: ['bathmat', 'mat', 'bath mat'],
+        desc: 'The cat depicted on the bathmat is very cute and good. You wonder if Pepper would be jealous.',
+        onTake(){
+          println('You\'re not sure that it\'s worth the effort.')
+        }
+      },
       ],
       exits: [
         {dir: ['west', 'living room'], id: 'playerLivingRoom'}
