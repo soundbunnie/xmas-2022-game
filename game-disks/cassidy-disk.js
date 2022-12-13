@@ -10,6 +10,7 @@ var isBitten = false;
 var isBleeding = false;
 var timesPepperTaken = 0;
 var isBandaged = false;
+var toiletUsed = false;
 
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
@@ -151,6 +152,16 @@ const cassidyDisk = () => ({
             println('Thankfully, you see no reason that you would need anything from in there.')
           }
         }},
+        {name: 'toilet',
+        desc: 'It sure is a toilet.',
+        onTake(){
+          println('Now that would be impressive.')
+        },
+        onUse(){
+          println('You feel a bit of relief as the toilet flushes.')
+          toiletUsed = true;
+        }
+        },
         {name: 'toilet paper',
         desc: 'Full roll of toilet paper. Triple ply.',
         isTakeable: true,
