@@ -8,7 +8,7 @@ var itemsExamined = [];
 // variables to be used later
 var isBitten = false;
 var isBleeding = false;
-var takePepperTimes = 0;
+var timesPepperTaken = 0;
 
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
@@ -91,25 +91,25 @@ const cassidyDisk = () => ({
                 println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){
-          if (takePepperTimes === 0){
+          if (timesPepperTaken === 0){
             println('As you pick him up, he sinks his teeth into your skin. You yelp and put him down, but the damage is done. Your hand now has a bite mark with a tiny bit of blood on it.')
             isBitten = true;
             isBleeding = true;
           }
-          else if (takePepperTimes === 1){
+          else if (timesPepperTaken === 1){
             println('Pepper squirms and wriggles away, managing to scratch you on the way down. You are bleeding.');
             isBitten = true;
             isBleeding = true;
           }
-          else if (takePepperTimes === 2){
+          else if (timesPepperTaken === 2){
             println("Pepper will not stop screaming as you once again try to pick him up. Your hand is now thoroughly fucked up.");
             isBitten = true;
             isBleeding = true;
           }
-          else if (takePepperTimes >= 3){
+          else if (timesPepperTaken >= 3){
             println("As valiant as your past attempts have been, Pepper figures you should probably do something else.");
           }
-            takePepperTimes ++}},
+            timesPepperTaken ++}},
         {name: ['tree', 'christmas tree'],
         onLook(){
             let room = getRoom(disk.roomId);
@@ -131,7 +131,17 @@ const cassidyDisk = () => ({
     {
       name: 'BATHROOM',
       id: 'bathroom',
-      desc: 'Your bathroom.'
+      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought. \n Above the toilet is a shelf holding your toilet paper, paper towels and a first-aid kit.\nThere is also, naturally, a sink with a mirror above it.',
+      items: [
+        {name: 'first aid kit',
+        desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
+        isTakeable: true,
+        onUse(){
+          if (isBleeding && timesPepperTaken){
+            println('You patch yourself up.')
+          }
+        }}
+      ],
     },
     {
       name: 'BEDROOM',
