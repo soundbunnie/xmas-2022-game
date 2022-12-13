@@ -9,6 +9,7 @@ var itemsExamined = [];
 var isBitten = false;
 var isBleeding = false;
 var timesPepperTaken = 0;
+var isBandaged = false;
 
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
@@ -137,8 +138,14 @@ const cassidyDisk = () => ({
         desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
         isTakeable: true,
         onUse(){
-          if (isBleeding && timesPepperTaken){
-            println('You patch yourself up.')
+          if (isBleeding && timesPepperTaken < 2){
+            println('You patch yourself up using a bandaid.')
+            isBleeding = false;
+          }
+          else if (isBleeding && timesPepperTaken >= 3){
+            println('You attempt to patch yourself up, but it requires the use of an alcohol wipe, the gauze bandage, and a real bandage.')
+            isBleeding = false;
+            isBandaged = true;
           }
         }}
       ],
