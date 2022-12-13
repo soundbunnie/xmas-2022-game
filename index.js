@@ -223,7 +223,7 @@ let look = () => {
 // string -> nothing
 let lookThusly = (str) => {
   const room = getRoom(disk.roomId);
-  println(`${room.name}, ${room.desc}`);}
+  println(`${disk.roomId}, ${room.desc}`);}
 
 // look at the passed item or character
 // array -> nothing

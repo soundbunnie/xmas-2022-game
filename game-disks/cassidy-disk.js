@@ -8,6 +8,7 @@ var itemsExamined = [];
 // variables to be used later
 var isBitten = false;
 var isBleeding = false;
+var takePepperTimes = 0;
 
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
@@ -37,7 +38,7 @@ const cassidyDisk = () => ({
             ░█████╗░░█████╗░░██████╗░██████╗██╗██████╗░██╗░░░██╗██╗░██████╗
             ██╔══██╗██╔══██╗██╔════╝██╔════╝██║██╔══██╗╚██╗░██╔╝╚█║██╔════╝
             ██║░░╚═╝███████║╚█████╗░╚█████╗░██║██║░░██║░╚████╔╝░░╚╝╚█████╗░
-            ██║░░██╗██╔══██║░╚═══██╗░╚═══██╗██║██║░░██║░░╚██╔╝░░░░░░╚═══██╗
+            ██║░░██╗██╔══██║░╚═══██╗░╚═══██╗██║██║░░██║░░╚██╔╝░░░░░░╚═══██╗                                
             ╚█████╔╝██║░░██║██████╔╝██████╔╝██║██████╔╝░░░██║░░░░░░██████╔╝
             ░╚════╝░╚═╝░░╚═╝╚═════╝░╚═════╝░╚═╝╚═════╝░░░░╚═╝░░░░░░╚═════╝░
 
@@ -90,9 +91,25 @@ const cassidyDisk = () => ({
                 println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){
+          if (takePepperTimes === 0){
             println('As you pick him up, he sinks his teeth into your skin. You yelp and put him down, but the damage is done. Your hand now has a bite mark with a tiny bit of blood on it.')
             isBitten = true;
-            isBleeding = true;}},
+            isBleeding = true;
+          }
+          else if (takePepperTimes === 1){
+            println('Pepper squirms and wriggles away, managing to scratch you on the way down. You are bleeding.');
+            isBitten = true;
+            isBleeding = true;
+          }
+          else if (takePepperTimes === 2){
+            println("Pepper will not stop screaming as you once again try to pick him up. Your hand is now thoroughly fucked up.");
+            isBitten = true;
+            isBleeding = true;
+          }
+          else if (takePepperTimes >= 3){
+            println("As valiant as your past attempts have been, Pepper figures you should probably do something else.");
+          }
+            takePepperTimes ++}},
         {name: ['tree', 'christmas tree'],
         onLook(){
             let room = getRoom(disk.roomId);
