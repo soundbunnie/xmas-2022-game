@@ -191,8 +191,20 @@ const cassidyDisk = () => ({
         },
         onTake(){
           println('It\'s not that kind of mirror.')
-        }
-      }
+        }},
+        {name: 'sink',
+        desc: 'You can tell it wasn\'t built this decade, but it works just fine.',
+        onTake(){
+          println('Feeling ambitious, are we?')
+        },
+        onUse(){
+          if (toiletUsed === true){
+            println('They say cleanliness is among godliness.')
+          }
+          else{
+            println('Your hands aren\'t dirty, but washing them couldn\'t hurt.')
+          }
+        }},
       ],
       exits: [
         {dir: ['west', 'living room'], id: 'playerLivingRoom'}
