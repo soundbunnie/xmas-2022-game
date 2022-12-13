@@ -162,6 +162,13 @@ const cassidyDisk = () => ({
           toiletUsed = true;
         }
         },
+        {name: 'paper towel',
+        desc: 'Always runs out too soon.',
+        isTakeable: true,
+        onTake(){
+          println('Could come in handy.')
+        }
+      },
       ],
       exits: [
         {dir: ['west', 'living room'], id: 'playerLivingRoom'}
