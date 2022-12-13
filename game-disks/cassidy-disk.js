@@ -125,14 +125,14 @@ const cassidyDisk = () => ({
         onTake(){println('A noble idea.')}}
       ],
       exits: [
-        { dir: 'north', id: 'bedroom', block: "You feel as though you're forgetting something...", },     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
-        { dir : 'east', id: 'bathroom'}
+        { dir: ['north', 'bedroom'], id: 'bedroom', block: "You feel as though you're forgetting something...", },     // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "endOfTheWorld".
+        { dir : ['east', 'bathroom'], id: 'bathroom'}
       ]
     },
     {
       name: 'BATHROOM',
       id: 'bathroom',
-      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought. \n Above the toilet is a shelf holding your toilet paper, paper towels and a first-aid kit.\nThere is also, naturally, a sink with a mirror above it.',
+      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought. \n Above the toilet is a shelf holding your toilet paper, paper towels and a first aid kit.\nThere is also, naturally, a sink with a mirror above it.',
       items: [
         {name: 'first aid kit',
         desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
@@ -149,6 +149,9 @@ const cassidyDisk = () => ({
           }
         }}
       ],
+      exits: [
+        {dir: ['west', 'living room'], id: 'playerLivingRoom'}
+      ]
     },
     {
       name: 'BEDROOM',
