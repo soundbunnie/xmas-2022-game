@@ -278,6 +278,25 @@ const cassidyDisk = () => ({
     {
     name: ['pepper', 'cat', 'kitten'],
     roomId: 'playerLivingRoom',
-    desc: 'issa cat'}
+    desc: 'issa cat',
+    onTalk(){
+      println('\"mrreeoww...\"')
+    },
+    topics: [
+      {
+        option: '**PET** him',
+        line: 'He bites you gently before going back to what he was doing.',
+      },
+      {
+        option: 'Ask him about his **DAY**',
+        line: 'He stares at you blankly.'
+      },
+      {
+        option: 'Ask if he was responsible for the **1978** oil crisis.',
+        line: 'Actually, you figure that you\'d rather not know.',
+        removeOnRead: true
+      }
+    ]
+  }
   ]
 });
