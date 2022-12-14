@@ -274,4 +274,10 @@ const cassidyDisk = () => ({
       `,
     },
   ],
+  characters: [
+    {
+    name: ['pepper', 'cat', 'kitten'],
+    roomId: 'playerLivingRoom',
+    desc: 'issa cat'}
+  ]
 });
