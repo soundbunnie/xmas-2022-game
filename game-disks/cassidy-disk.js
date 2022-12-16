@@ -230,58 +230,11 @@ const cassidyDisk = () => ({
       name: 'BEDROOM',
       id: 'bedroom',
       desc: `
-        This is your bedroom. Home sweet home. \nOn the wall to the right of your desk, you see your trusty calendar.\
+        This is your bedroom. Home sweet home. \
+        \nOn the wall to the right of your desk, you see your trusty calendar.\
         \nYou hear aggressive snorthing coming from your bed.
       `,
-      // This is just here as an example of how you can use the onEnter property.
-      // This gets called when the player enters the room.
-      onEnter({disk, println, getRoom}) {
-        console.log('Entered', disk.roomId); // Logs "Entered endOfTheWorld"
-      },
-      items: [ // Declare items for bedroom
-        { name: 'key', desc: 'It looks like a key.', isTakeable: true, onUse({disk, println, getRoom}) {
-          // This method gets run when the user types "use key".
-          const room = getRoom(disk.roomId);
-          const door = room.items.find(item => item.name === 'door');
-          // If there's a door in the room, open it.
-          if (door) {
-            println('The door has opened!');
-            door.isOpen = true;
-          } else {
-            println('There\'s nothing to use the key on.');
-          }
-        }},
-        { name: 'book', desc: 'It appears to contain some sort of encantation, or perhaps... code.', isTakeable: true, onUse({disk, println, getRoom}) {
-          const room = getRoom(disk.roomId);
-          const door = room.items.find(item => item.name === 'door');
-
-          if (door) {
-            println('You already used the book!');
-            return;
-          }
-
-          println('A door has appeared from nothing! It seems to go nowhere...');
-          room.items.push({ name: 'door', desc: 'It seems to go nowhere...', isOpen: false, onUse({disk, println, enterRoom}) {
-            const door = room.items.find(item => item.name === 'door');
-            if (door.isOpen) {
-              enterRoom('gameReallyOver');
-            } else {
-              println('The door is locked.');
-            }
-          }});
-        }},
-        { name: 'castle', desc: 'It has been... corrupted somehow.' },
-      ]
-    },
-    {
-      name: 'GAME REALLY OVER',
-      id: 'gameReallyOver',
-      img: '¯\\_(ツ)_/¯',
-      desc: `
-        That's all I've written so far! If you liked this and want more, write me on Twitter: @okaybenji
-      `,
-    },
-  ],
+    }],
   characters: [
     {
     name: ['pepper', 'cat', 'kitten'],
