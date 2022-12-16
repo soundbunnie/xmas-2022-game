@@ -11,6 +11,7 @@ var isBleeding = false;
 var timesPepperTaken = 0;
 var isBandaged = false;
 var toiletUsed = false;
+var bedroomPromptDisplayed = false;
 
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
@@ -77,9 +78,13 @@ const cassidyDisk = () => ({
             if (itemsExamined.length === 3){
                 const exit = getExit('north', room.exits);
                 delete exit.block;
-                println('You freeze as you suddenly recall what you\'ve forgotten- \
-                \n Pepper doesn\'t have a festive costume for the holiday! \
-                \n You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north')
+                println(`==================================================
+                
+                You freeze as you suddenly recall something you've forgotten- 
+
+                Pepper doesn't have a festive costume for the holiday!
+                
+                You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
         {name: ['couch', 'sofa'],
@@ -99,23 +104,33 @@ const cassidyDisk = () => ({
             if (itemsExamined.length === 3){
                 const exit = getExit('north', room.exits);
                 delete exit.block;
-                println('You freeze as you suddenly recall what you\'ve forgotten- \
-                \n Pepper doesn\'t have a festive costume for the holiday! \
-                \n You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north')
+                println(`==================================================
+                
+                You freeze as you suddenly recall something you've forgotten- 
+
+                Pepper doesn't have a festive costume for the holiday!
+                
+                You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
             }},
         onTake(){
           if (timesPepperTaken === 0){
-            println('As you pick him up, he sinks his teeth into your skin. You yelp and put him down, but the damage is done. Your hand now has a bite mark with a tiny bit of blood on it.')
+            println(`As you pick him up, he sinks his teeth into your skin. You yelp and put him down, but the damage is done. 
+            
+            Your hand now has a bite mark with a tiny bit of blood on it.`)
             isBitten = true;
             isBleeding = true;
           }
           else if (timesPepperTaken === 1){
-            println('Pepper squirms and wriggles away, managing to scratch you on the way down. You are bleeding.');
+            println(`Pepper squirms and wriggles away, managing to scratch you on the way down. 
+            
+            You are bleeding.`);
             isBitten = true;
             isBleeding = true;
           }
           else if (timesPepperTaken === 2){
-            println("Pepper will not stop screaming as you once again try to pick him up. Your hand is now thoroughly fucked up.");
+            println(`Pepper will not stop screaming as you once again try to pick him up. 
+            
+            Your hand is now thoroughly fucked up.`);
             isBitten = true;
             isBleeding = true;
           }
@@ -132,9 +147,14 @@ const cassidyDisk = () => ({
                 if (itemsExamined.length === 3){
                     const exit = getExit('north', room.exits);
                     delete exit.block;
-                    println('You freeze as you suddenly recall what you\'ve forgotten- \
-                    \n Pepper doesn\'t have a festive costume for the holiday! \
-                    \n You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north')}},
+                    println(`==================================================
+                
+                    You freeze as you suddenly recall something you've forgotten- 
+    
+                    Pepper doesn't have a festive costume for the holiday!
+                    
+                    You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
+                  }},
         onTake(){println('A noble idea.')}}
       ],
       exits: [
@@ -145,9 +165,11 @@ const cassidyDisk = () => ({
     {
       name: 'BATHROOM',
       id: 'bathroom',
-      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought.\
-       \n Above the toilet is a shelf holding your paper towels and a first aid kit.\
-       \nThere is also, naturally, a sink with a mirror above it.',
+      desc: `Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought.
+
+       Above the toilet is a shelf holding your paper towels and a first aid kit.
+
+       here is also, naturally, a sink with a mirror above it.`,
       items: [ // Declare items for the bathroom
         {name: 'first aid kit',
         desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
@@ -232,14 +254,16 @@ const cassidyDisk = () => ({
       name: 'BEDROOM',
       id: 'bedroom',
       desc: `
-        This is your bedroom. Home sweet home. \
-        \nOn the right side of your desk next to your computer, you see a digital clock.\
-        \nYou hear aggressive snorthing coming from your bed.
+        This is your bedroom. Home sweet home.
+
+        On the right side of your desk next to your computer, you see a digital clock.
+
+        You hear aggressive snorting coming from your bed.
       `,
       items: [ // Declare items for bedroom
         {name: ['digital clock', 'clock'],
-      desc: 'It\'s a mushroom shaped digital clock that displays the time. \
-      \nYou don\'t really remember having this, but it sure comes in handy now that the newest update on your phone made it so you can\'t use it to check the date.',
+      desc: `It's a mushroom shaped digital clock that displays the time. 
+      You don't really remember having this, but it sure comes in handy now that the newest update on your phone made it so you can't use it to check the date.`,
       isTakeable: true,
       onLook(){
         const date = new Date();
@@ -257,21 +281,28 @@ const cassidyDisk = () => ({
       }
       },
       {name: 'bed',
-    desc: 'Comfy and cozy. A compelling force makes you want to crawl under the covers and fall asleep, but you know that you wouldn\'t wake up for hours,\
-     at which point the stores would all be closed.\
-     \n But you wouldn\'t do that. Right?',
+    desc: `Comfy and cozy.
+    A compelling force makes you want to crawl under the covers and fall asleep, but you know that you wouldn't wake up for hours,
+    at which point the stores would all be closed.
+
+    But you wouldn\'t do that. Right?
+
+    As you think about how bad of an idea it would be to use your bed right now, you see a very good girl wagging her tail, now on top of the covers.`,
     onUse(){
       println(`zzzzz
       ＜⌒／ヽ-､_＿_ 
       ／＜_/＿＿＿＿／
       ￣￣￣￣￣￣￣
-      "Only five more minutes," you say countless times over the next 5 days.\
-      \n Christmas has passed.\
-      \n GAME OVER.`
+      "Only five more minutes," you say countless times over the next 5 days.
+      Christmas has passed.
+      GAME OVER.`
       )},
-      onTake(){
-        println('In a perfect world, maybe.');
+    onTake(){
+      println('In a perfect world, maybe.');
       }
+    },
+    {
+      name: ''
     }
     ]
     }],
