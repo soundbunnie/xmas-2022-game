@@ -65,11 +65,11 @@ const cassidyDisk = () => ({
 
         To your right sits an immaculately decorated Christmas tree. Underneath it lies an adorable little kitten named Pepper.
       `,
-      items: [
+      items: [ // Declare items for the living room
         { name: ['TV', 'Television'], 
         desc: 'It\'s playing Scooby Doo: Mystery Incorporated.',
         onLook(){
-            let room = getRoom(disk.roomId);
+            let room = getRoom(disk.roomId); // Check if player has examined 3 items in room, if so prompt player to let them know they can move on.
             if (!itemsExamined.includes('Television')){
                 itemsExamined.push("Television")};
             if (itemsExamined.length === 3){
@@ -140,7 +140,7 @@ const cassidyDisk = () => ({
       name: 'BATHROOM',
       id: 'bathroom',
       desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought. \n Above the toilet is a shelf holding your paper towels and a first aid kit.\nThere is also, naturally, a sink with a mirror above it.',
-      items: [
+      items: [ // Declare items for the bathroom
         {name: 'first aid kit',
         desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
         isTakeable: true,
@@ -231,7 +231,7 @@ const cassidyDisk = () => ({
       onEnter({disk, println, getRoom}) {
         console.log('Entered', disk.roomId); // Logs "Entered endOfTheWorld"
       },
-      items: [
+      items: [ // Declare items for bedroom
         { name: 'key', desc: 'It looks like a key.', isTakeable: true, onUse({disk, println, getRoom}) {
           // This method gets run when the user types "use key".
           const room = getRoom(disk.roomId);
