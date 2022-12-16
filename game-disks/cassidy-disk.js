@@ -234,7 +234,7 @@ const cassidyDisk = () => ({
         \nOn the right side of your desk next to your computer, you see a digital clock.\
         \nYou hear aggressive snorthing coming from your bed.
       `,
-      items: [
+      items: [ // Declare items for bedroom
         {name: ['digital clock', 'clock'],
       desc: 'It\'s a mushroom shaped digital clock that displays the time. \
       \nYou don\'t really remember having this, but it sure comes in handy now that the newest update on your phone made it so you can\'t use it to check the date.',
@@ -243,6 +243,15 @@ const cassidyDisk = () => ({
         const date = new Date();
         currentDate = date.toLocaleString();
         println(`It is currently ${currentDate}`);
+      },
+      onUse(){
+        const date = new Date();
+        currentDate = date.toLocaleString();
+        println(`It is currently ${currentDate}`);
+      },
+      onTake(){
+        println('You took the digital clock. \
+        \n It fits nicely in your backpack. Better be careful not to break it, though.')
       }
       }
       ]
@@ -268,8 +277,23 @@ const cassidyDisk = () => ({
         option: 'Ask if he was responsible for the **1978** oil crisis.',
         line: 'Actually, you figure that you\'d rather not know.',
         removeOnRead: true
+      },
+    ],
+  },
+    {
+    name: ['trina', 'dog', 'doggy', 'good girl'],
+    roomId: 'bedroom',
+    desc: 'issa dog',
+    onTalk(){
+      println('khrrr...')
+    },
+    topics: [
+      {
+        option: '**PET** her',
+        line: 'snortnsoortsnortnosrtnosrt'
       }
     ]
-  }
+    }
   ]
-});
+  }
+);
