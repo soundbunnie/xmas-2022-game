@@ -75,8 +75,9 @@ const cassidyDisk = () => ({
             if (itemsExamined.length === 3){
                 const exit = getExit('north', room.exits);
                 delete exit.block;
-                
-                println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
+                println('You freeze as you suddenly recall what you\'ve forgotten- \
+                \n Pepper doesn\'t have a festive costume for the holiday! \
+                \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
         {name: ['couch', 'sofa'],
@@ -96,7 +97,9 @@ const cassidyDisk = () => ({
             if (itemsExamined.length === 3){
                 const exit = getExit('north', room.exits);
                 delete exit.block;
-                println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
+                println('You freeze as you suddenly recall what you\'ve forgotten- \
+                \n Pepper doesn\'t have a festive costume for the holiday! \
+                \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
             }},
         onTake(){
           if (timesPepperTaken === 0){
@@ -126,8 +129,9 @@ const cassidyDisk = () => ({
                 if (itemsExamined.length === 3){
                     const exit = getExit('north', room.exits);
                     delete exit.block;
-                    println('You freeze as you suddenly recall what you\'ve forgotten- \n Pepper doesn\'t have a festive costume for the holiday! \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
-                }},
+                    println('You freeze as you suddenly recall what you\'ve forgotten- \
+                    \n Pepper doesn\'t have a festive costume for the holiday! \
+                    \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')}},
         desc: "Its warm lights are comforting to you.",
         onTake(){println('A noble idea.')}}
       ],
@@ -139,7 +143,9 @@ const cassidyDisk = () => ({
     {
       name: 'BATHROOM',
       id: 'bathroom',
-      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought. \n Above the toilet is a shelf holding your paper towels and a first aid kit.\nThere is also, naturally, a sink with a mirror above it.',
+      desc: 'Your bathroom. It\'s a little cramped with the litterbox in there, but the shower is nice and you still love that new bathmat you bought.\
+       \n Above the toilet is a shelf holding your paper towels and a first aid kit.\
+       \nThere is also, naturally, a sink with a mirror above it.',
       items: [ // Declare items for the bathroom
         {name: 'first aid kit',
         desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
@@ -224,7 +230,8 @@ const cassidyDisk = () => ({
       name: 'BEDROOM',
       id: 'bedroom',
       desc: `
-        This is your bedroom. Home sweet home. \nOn the wall to the right of your desk, you see your trusty calendar. \nYou hear aggressive snorthing coming from your bed.
+        This is your bedroom. Home sweet home. \nOn the wall to the right of your desk, you see your trusty calendar.\
+        \nYou hear aggressive snorthing coming from your bed.
       `,
       // This is just here as an example of how you can use the onEnter property.
       // This gets called when the player enters the room.
