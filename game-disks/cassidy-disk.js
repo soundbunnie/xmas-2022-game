@@ -62,7 +62,7 @@ const cassidyDisk = () => ({
 
         To your right sits an immaculately decorated Christmas tree. Underneath it lies an adorable little kitten named Pepper.
         
-        Your bathroom is to the east.
+        Your bathroom is to the east and your bedroom is north.
       `,
       items: [ // Declare items for the living room
         { name: ['TV', 'Television'], 
@@ -85,11 +85,11 @@ const cassidyDisk = () => ({
               delete exit.block;
               println(`==================================================
               
-              You freeze as you suddenly recall something you've forgotten- 
+              You freeze as you suddenly recall something- 
   
               Pepper doesn't have a festive costume for the holiday!
               
-              You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
+              You cannot seem to remember what the date is, though you have a digital clock lying around somewhere.`)
               bedroomPromptDisplayed = true;
             }
             },
@@ -168,7 +168,9 @@ const cassidyDisk = () => ({
         desc: 'Always runs out too soon.',
         isTakeable: true,
         onTake(){
-          println('Could come in handy.')
+          println(`Could come in handy.
+          
+          Paper Towels taken.`)
         }},
         {name: ['litter box', 'litter', 'litterbox'],
         desc: 'It\'s clean.',
