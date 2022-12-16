@@ -149,7 +149,7 @@ const cassidyDisk = () => ({
             isBleeding = false;
           }
           else if (isBleeding && timesPepperTaken >= 3){
-            println('You attempt to patch yourself up, but it requires the use of an alcohol wipe, the gauze bandage, and a real bandage.')
+            println('You patch yourself up using an assortment of things you find in the first aid kit. Your hand still hurts like hell.')
             isBleeding = false;
             isBandaged = true;
           }
