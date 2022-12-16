@@ -579,7 +579,7 @@ let useItem = (itemName) => {
   }
 
   if (!item.onUse) {
-    println(`That item doesn't have a use.`);
+    println(`Item has no use`);
     return;
   }
 
