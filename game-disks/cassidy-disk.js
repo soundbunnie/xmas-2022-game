@@ -1,10 +1,6 @@
 // customize the appearance of the bullets
 bullet = '&ast;';
 
-// keep track of examined items
-
-var itemsExamined = [];
-
 // variables to be used later
 var isBitten = false;
 var isBleeding = false;
@@ -71,21 +67,6 @@ const cassidyDisk = () => ({
       items: [ // Declare items for the living room
         { name: ['TV', 'Television'], 
         desc: 'It\'s playing Scooby Doo: Mystery Incorporated.',
-        onLook(){
-            let room = getRoom(disk.roomId); // Check if player has examined 3 items in room, if so prompt player to let them know they can move on.
-            if (!itemsExamined.includes('Television')){
-                itemsExamined.push("Television")};
-            if (itemsExamined.length === 3){
-                const exit = getExit('north', room.exits);
-                delete exit.block;
-                println(`==================================================
-                
-                You freeze as you suddenly recall something you've forgotten- 
-
-                Pepper doesn't have a festive costume for the holiday!
-                
-                You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
-            }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
         {name: ['couch', 'sofa'],
         desc: 'Comfy.',
@@ -99,19 +80,19 @@ const cassidyDisk = () => ({
             if (isBitten){
                 println('Even if he\'s an asshole, seeing his tiny, sleeping face makes it hard to stay mad at him.')
             }
-            if (!itemsExamined.includes('Pepper')){
-                itemsExamined.push("Pepper")}
-            if (itemsExamined.length === 3){
-                const exit = getExit('north', room.exits);
-                delete exit.block;
-                println(`==================================================
-                
-                You freeze as you suddenly recall something you've forgotten- 
-
-                Pepper doesn't have a festive costume for the holiday!
-                
-                You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
-            }},
+            if (!bedroomPromptDisplayed){
+              const exit = getExit('north', room.exits);
+              delete exit.block;
+              println(`==================================================
+              
+              You freeze as you suddenly recall something you've forgotten- 
+  
+              Pepper doesn't have a festive costume for the holiday!
+              
+              You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
+              bedroomPromptDisplayed = true;
+            }
+            },
         onTake(){
           if (timesPepperTaken === 0){
             println(`As you pick him up, he sinks his teeth into your skin. You yelp and put him down, but the damage is done. 
@@ -140,21 +121,6 @@ const cassidyDisk = () => ({
             timesPepperTaken ++}},
         {name: ['tree', 'christmas tree'],
         desc: "Its warm lights are comforting to you.",
-        onLook(){
-            let room = getRoom(disk.roomId);
-            if (!itemsExamined.includes('Christmas Tree')){
-                itemsExamined.push("Christmas Tree")}
-                if (itemsExamined.length === 3){
-                    const exit = getExit('north', room.exits);
-                    delete exit.block;
-                    println(`==================================================
-                
-                    You freeze as you suddenly recall something you've forgotten- 
-    
-                    Pepper doesn't have a festive costume for the holiday!
-                    
-                    You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north`)
-                  }},
         onTake(){println('A noble idea.')}}
       ],
       exits: [
