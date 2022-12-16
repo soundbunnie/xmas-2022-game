@@ -263,6 +263,7 @@ const cassidyDisk = () => ({
       items: [ // Declare items for bedroom
         {name: ['digital clock', 'clock'],
       desc: `It's a mushroom shaped digital clock that displays the time. 
+
       You don't really remember having this, but it sure comes in handy now that the newest update on your phone made it so you can't use it to check the date.`,
       isTakeable: true,
       onLook(){
@@ -302,7 +303,19 @@ const cassidyDisk = () => ({
       }
     },
     {
-      name: ''
+      name: ['computer', 'pc', 'laptop', 'monitor'],
+      desc: `Your laptop is pretty high quality overall.
+      
+      It would be nice to have a full desktop setup, but for now the laptop and the monitor it's hooked up to will do.`,
+      isTakeable: true,
+      onUse(){
+        println(`Trina snorts loudly. She thinks you should do something else.`)
+      },
+      onTake(){
+        println(`You can't figure out how to take the monitor with you, but you shove your laptop into your bag.
+        
+        Laptop taken.`)
+      }
     }
     ]
     }],
