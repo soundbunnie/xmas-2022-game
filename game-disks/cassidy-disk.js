@@ -77,7 +77,7 @@ const cassidyDisk = () => ({
                 delete exit.block;
                 println('You freeze as you suddenly recall what you\'ve forgotten- \
                 \n Pepper doesn\'t have a festive costume for the holiday! \
-                \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
+                \n You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north')
             }},
         onTake(){println('Where are you going to put it? Your pockets?')}},
         {name: ['couch', 'sofa'],
@@ -99,7 +99,7 @@ const cassidyDisk = () => ({
                 delete exit.block;
                 println('You freeze as you suddenly recall what you\'ve forgotten- \
                 \n Pepper doesn\'t have a festive costume for the holiday! \
-                \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')
+                \n You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north')
             }},
         onTake(){
           if (timesPepperTaken === 0){
@@ -132,7 +132,7 @@ const cassidyDisk = () => ({
                     delete exit.block;
                     println('You freeze as you suddenly recall what you\'ve forgotten- \
                     \n Pepper doesn\'t have a festive costume for the holiday! \
-                    \n You cannot seem to remember what the date is, though you know that you have a calendar in your room, located north.')}},
+                    \n You cannot seem to remember what the date is, though you know that you have a digital clock in your room, located north')}},
         onTake(){println('A noble idea.')}}
       ],
       exits: [
@@ -231,9 +231,21 @@ const cassidyDisk = () => ({
       id: 'bedroom',
       desc: `
         This is your bedroom. Home sweet home. \
-        \nOn the wall to the right of your desk, you see your trusty calendar.\
+        \nOn the right side of your desk next to your computer, you see a digital clock.\
         \nYou hear aggressive snorthing coming from your bed.
       `,
+      items: [
+        {name: ['digital clock', 'clock'],
+      desc: 'It\'s a mushroom shaped digital clock that displays the time. \
+      \nYou don\'t really remember having this, but it sure comes in handy now that the newest update on your phone made it so you can\'t use it to check the date.',
+      isTakeable: true,
+      onLook(){
+        const date = new Date();
+        currentDate = date.toLocaleString();
+        println(`It is currently ${currentDate}`);
+      }
+      }
+      ]
     }],
   characters: [
     {
