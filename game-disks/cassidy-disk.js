@@ -253,8 +253,24 @@ const cassidyDisk = () => ({
         println('You took the digital clock. \
         \n It fits nicely in your backpack. Better be careful not to break it, though.')
       }
-      }
-      ]
+      },
+      {name: 'bed',
+    desc: 'Comfy and cozy. A compelling force makes you want to crawl under the covers and fall asleep, but you know that you wouldn\'t wake up for hours,\
+     at which point the stores would all be closed.\
+     \n But you wouldn\'t do that. Right?',
+    onUse(){
+      println(`zzzzz
+      ＜⌒／ヽ-､_＿_ 
+      ／＜_/＿＿＿＿／
+      ￣￣￣￣￣￣￣
+      "Only five more minutes," you say countless times over the next 5 days.\
+      \n Christmas has passed.\
+      \n GAME OVER.
+      `
+      )
+    }
+    }
+    ]
     }],
   characters: [
     {
