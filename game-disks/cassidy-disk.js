@@ -26,8 +26,9 @@ commands[0].help = help;
 // switch to the retro style
 document.getElementById('styles').setAttribute('href', 'styles/retro.css');
 
-// change font color
+// change font color and title
 document.body.style.color = "#00FFFF";
+document.title = "Cassidy's Christmas Adventure!"
 
 const cassidyDisk = () => ({
   roomId: 'playerLivingRoom',        // The room the player is currently in. Set this to the room you want the player to start in.
