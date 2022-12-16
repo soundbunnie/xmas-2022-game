@@ -64,6 +64,8 @@ const cassidyDisk = () => ({
         You are sitting on your new couch watching TV. It took quite a lot of waiting and coordinating to get the damn thing here, but your patience has finally paid off.
 
         To your right sits an immaculately decorated Christmas tree. Underneath it lies an adorable little kitten named Pepper.
+        
+        Your bathroom is to the east.
       `,
       items: [ // Declare items for the living room
         { name: ['TV', 'Television'], 
@@ -265,10 +267,11 @@ const cassidyDisk = () => ({
       ￣￣￣￣￣￣￣
       "Only five more minutes," you say countless times over the next 5 days.\
       \n Christmas has passed.\
-      \n GAME OVER.
-      `
-      )
-    }
+      \n GAME OVER.`
+      )},
+      onTake(){
+        println('In a perfect world, maybe.');
+      }
     }
     ]
     }],
