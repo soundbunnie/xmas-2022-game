@@ -290,6 +290,10 @@ const cassidyDisk = () => ({
     {
       name: 'shelf',
       desc: `It's in a bit of an awkward location, but it's the only place that this plant can actually get decent light in.`
+    },
+    {
+      name: 'plant',
+      desc: `It's coming along nicely!`,
     }
     ]
     }],
