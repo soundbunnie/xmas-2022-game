@@ -8,6 +8,7 @@ var timesPepperTaken = 0;
 var isBandaged = false;
 var toiletUsed = false;
 var bedroomPromptDisplayed = false;
+var timeExamined = false;
 
 // customize the help menu
 help = () => println(`LOOK :: repeat room description
@@ -240,11 +241,14 @@ const cassidyDisk = () => ({
         const date = new Date();
         currentDate = date.toLocaleString();
         println(`It is currently ${currentDate}`);
+        timeExamined = true;
+        
       },
       onUse(){
         const date = new Date();
         currentDate = date.toLocaleString();
         println(`It is currently ${currentDate}`);
+        timeExamined = true;
       },
       onTake(){
         println('You took the digital clock. \
