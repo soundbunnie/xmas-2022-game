@@ -227,7 +227,7 @@ const cassidyDisk = () => ({
 
         In the corner farthest from your bed is a shelf holding one of your many plants.
 
-        On the right side of your desk next to your computer, you see a digital clock.
+        On the right side of your desk next to your computer and your phone, you see a digital clock.
 
         You hear aggressive snorting coming from your bed.
       `,
@@ -240,14 +240,19 @@ const cassidyDisk = () => ({
       onLook(){
         const date = new Date();
         currentDate = date.toLocaleString();
-        println(`It is currently ${currentDate}`);
+        println(`It is currently ${currentDate}
+        
+        Damn! All of the stores you know of that would be able to help you right now are closed, except for one. Hats n' Such.`);
         timeExamined = true;
         
       },
       onUse(){
         const date = new Date();
         currentDate = date.toLocaleString();
-        println(`It is currently ${currentDate}`);
+        currentDate = date.toLocaleString();
+        println(`It is currently ${currentDate}
+        
+        Damn! All of the stores you know of that would be able to help you right now are closed, except for one. Hats n' Such.`);
         timeExamined = true;
       },
       onTake(){
@@ -298,6 +303,12 @@ const cassidyDisk = () => ({
     {
       name: 'plant',
       desc: `It's coming along nicely!`,
+    },
+    {
+      name: ['cellphone', 'cell phone', 'cell', 'phone', 'iphone'],
+      desc: `Small but effective. 
+      
+      The backside of your phone case is holding a plethora of assorted cards, making it almost as big as the phone itself.`
     }
     ]
     }],
