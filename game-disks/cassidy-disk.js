@@ -242,7 +242,7 @@ const cassidyDisk = () => ({
         currentDate = date.toLocaleString();
         println(`It is currently ${currentDate}
         
-        Damn! All of the stores you know of that would be able to help you right now are closed, except for one. Hats n' Such.`);
+        Damn! All of the stores you know of that would be able to help you right now are closed, except for one. Hats n' Such, which isn't within walking distance.`);
         timeExamined = true;
         
       },
@@ -252,7 +252,7 @@ const cassidyDisk = () => ({
         currentDate = date.toLocaleString();
         println(`It is currently ${currentDate}
         
-        Damn! All of the stores you know of that would be able to help you right now are closed, except for one. Hats n' Such.`);
+        Damn! All of the stores you know of that would be able to help you right now are closed, except for one. Hats n' Such, which isn't within walking distance.`);
         timeExamined = true;
       },
       onTake(){
@@ -308,10 +308,28 @@ const cassidyDisk = () => ({
       name: ['cellphone', 'cell phone', 'cell', 'phone', 'iphone'],
       desc: `Small but effective. 
       
-      The backside of your phone case is holding a plethora of assorted cards, making it almost as big as the phone itself.`
+      The backside of your phone case is holding a plethora of assorted cards, making it almost as big as the phone itself.`,
+      isTakeable: true,
+      onUse(){
+        if (timeExamined){
+          println(`You open the Uber app on your phone  and book one to Hats n' Such. 
+          
+          Strangely, the app tells you to type in "Uber" to confirm.`);
+        }
+        else{
+          println(`The only app on your phone that stands out to you right now is Uber.`)
+        }
+      }
     }
-    ]
-    }],
+    ],
+   exits: [{ dir: 'uber', id: 'uber'}]
+    },
+  {
+    name: 'UBER RIDE',
+    id: 'uber',
+    desc: `ur in an uber nerd`
+  }],
+
   characters: [
     {
     name: ['pepper', 'cat', 'kitten'],
