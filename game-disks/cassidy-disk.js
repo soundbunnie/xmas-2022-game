@@ -224,6 +224,8 @@ const cassidyDisk = () => ({
       desc: `
         This is your bedroom. Home sweet home.
 
+        In the corner farthest from your bed is a shelf holding one of your many plants.
+
         On the right side of your desk next to your computer, you see a digital clock.
 
         You hear aggressive snorting coming from your bed.
@@ -254,7 +256,7 @@ const cassidyDisk = () => ({
     A compelling force makes you want to crawl under the covers and fall asleep, but you know that you wouldn't wake up for hours,
     at which point the stores would all be closed.
 
-    But you wouldn\'t do that. Right?
+    But you wouldn't do that. Right?
 
     As you think about how bad of an idea it would be to use your bed right now, you see a very good girl wagging her tail, now on top of the covers.`,
     onUse(){
@@ -284,6 +286,10 @@ const cassidyDisk = () => ({
         
         Laptop taken.`)
       }
+    },
+    {
+      name: 'shelf',
+      desc: `It's in a bit of an awkward location, but it's the only place that this plant can actually get decent light in.`
     }
     ]
     }],
