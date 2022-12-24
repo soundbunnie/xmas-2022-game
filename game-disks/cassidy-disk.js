@@ -360,9 +360,19 @@ const cassidyDisk = () => ({
         
         "Actually, nevermind," he says. "I don't care."`)
       }
-    }
+      println(`================================================
+      
+      You arrive at your destination after a bit of waiting. Type leave to get out.`)
+    },
+    exits: [{dir: 'leave', id: 'store'}]
+  },
+  {
+    name: `HATS N' SUCH`,
+    id: 'store',
+    desc: `Hats N' Such is an amazing store with a big variety of objects that are very well described but not interactable for a perfectly valid reason.
+    
+    With laser focus precision, you go to the section labeled "Cool christmas hats for pets". You decide to close your eyes and randomly pick two out, then head to the counter.`
   }],
-
   characters: [
     {
     name: ['pepper', 'cat', 'kitten'],
