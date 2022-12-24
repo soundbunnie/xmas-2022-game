@@ -529,7 +529,7 @@ const cassidyDisk = () => ({
       onTalk(){
         println(`You open your mouth, but can't think of anything to say. He raises an eyebrow at the mirror.
         
-        FIN~~~`);
+        ~~~FIN~~~`);
       }
     }
   ]
