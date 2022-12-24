@@ -6,6 +6,7 @@ var isBitten = false;
 var isBleeding = false;
 var timesPepperTaken = 0;
 var isBandaged = false;
+var hasBandaid = false;
 var toiletUsed = false;
 var bedroomPromptDisplayed = false;
 var timeExamined = false;
@@ -142,9 +143,10 @@ const cassidyDisk = () => ({
         desc: 'It\'s green and has a sticker of a very nervous looking dog on it.',
         isTakeable: true,
         onUse(){
-          if (isBleeding && timesPepperTaken < 2){
+          if (isBleeding && timesPepperTaken < 3){
             println('You patch yourself up using a bandaid.')
             isBleeding = false;
+            hasBandaid = true;
           }
           else if (isBleeding && timesPepperTaken >= 3){
             println('You patch yourself up using an assortment of things you find in the first aid kit. Your hand still hurts like hell.')
@@ -395,6 +397,14 @@ const cassidyDisk = () => ({
         line: 'snortnsoortsnortnosrtnosrt'
       }
     ]
+    },
+    {
+      name: ['driver', 'uber driver', 'guy', 'man'],
+      roomId: 'uber',
+      desc: `He looks like the most indifferent person you've ever seen.`,
+      onTalk(){
+        println(`You open your mouth, but can't think of anything to say. He raises an eyebrow at the mirror.`);
+      }
     }
   ]
   }
