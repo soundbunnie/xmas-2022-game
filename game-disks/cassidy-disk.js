@@ -371,7 +371,93 @@ const cassidyDisk = () => ({
     id: 'store',
     desc: `Hats N' Such is an amazing store with a big variety of objects that are very well described but not interactable for a perfectly valid reason.
     
-    With laser focus precision, you go to the section labeled "Cool christmas hats for pets". You decide to close your eyes and randomly pick two out, then head to the counter.`
+    With incredible focus, you head to the section labeled "Cool christmas hats for pets". You decide to close your eyes and randomly pick two out, then head to the counter.
+    
+    You explain to the person at the register that you're trying to surprise yourself and don't want to know what you got. They nod their head and hand you a bag.
+    
+    You decide this experience has been sufficiently cool and interactive and decide to type "HOME" to go home with the costumes.`,
+  exits:[{dir: 'home', id: 'homeAgain'}],
+  },
+  {name: 'LIVING ROOM AGAIN.',
+  id: 'homeAgain',
+  desc: `As you enter your living room, you see the two animals conveniently lined up waiting for you. You put on their hats, as pictured above.    
+`,
+  img: `
+     
+  __                                           _                   ___
+ _                  _     _                  ___                     _
+__                       _                   _                      _ _
+                                 ,▄▄▄▄▄▄▄                          _
+                              ,▄█╢▓▓▓▓▓▓▓╢█▀   ▀_
+                             █▓▓▓▓▓▓▓▓▓▓▓█▌     ▌
+                           ╒█▓▓▓▓▓▓▓▓▓▓▓█_▀▄▄▄▄▀
+           ▄∞▄▄           ,█▓▓▓▓▓▓▓▓▓▓▓▓╢█           ▄▄∞▄
+           ▌     ▀∞▄_     ███▓▓▓▓▓▓▓█▓█████_    ▄∞▀▀    └▄
+          █          ▀▄_ █_                ▐,▄▀-         █
+          ▌             ▀▌_    ,,,,,,      ▐▌_           ▐_           __
+_           ▌            _ ▀▀▀-          - ▀▀▀_ _ __       ▐_         __
+_          ▌          _ _                   _  _ _        ▐        _ _
+_         ▐_         __                                  █        _
+           ▌                                            ╒_
+           ▐⌐                                           ▌
+            ▐_                                         █
+            ▌       ,▄▄▄,                  ,▄▄▄,       ▐⌐
+           ▐_     ▐  ▄████▀▄_           ▄▀████▄ -█      ▌
+           █       ▀▄▀████  █_         █  █████▄▀       █
+   _       ▐          ▀▀▀M▀▀            ▀▀ⁿ▀▀▀          █
+ ___       ▐▄                                 _ _       ▌         __  __
+  .¬══^ⁿ""" █"  """^*══¬.__     ,▄▄,_      .⌐∞═^*""""  █ """ⁿ^^═∞w
+          ,.⌐█══^*ⁿ"""""ⁿ^      ▀██▀      ^ⁿ""""""*^^═█¬.,_         __
+    ═" _      ▀,,,⌐══^""         ▐▌          "ⁿ^═¬., ▀        "═
+          .═ⁿ   ▄_          *w▄∞²  ═▄▄▄═           ▄▀  ⁿ═._
+      ═"          ▀▄                            ,Æ▀         "*_
+                    ▀N▄                      ▄Æ▀
+                        ▀▀∞▄▄,        ,▄▄∞ⁿ▀-
+                               -    -
+                          _
+_ _                     _ _                  __                     _ _
+   _                  ___                        _                _ _
+   
+   
+   ===================================================================================
+   
+   
+   _        ___ __ __ _________________░____░__░░░░
+   ░────────────────────────────────────────────────────────────────────────░░░░
+   ░                                                                         ░░░
+   ░                                                                         ░░░
+   ░                                                                         ░░░
+   ░                                                                         ░░░
+   ░                                                                         ░░░
+   ░                                                                         ░░░
+   ░                                                                         ░░░
+   ░             ▄▄▄▄,            ,▄@▓▓╣╢╢╣▓█▄,      ███▄                    ░░░
+   ░             ▐▄ ▀▀██▀▄▄     ▄▓╢▓▓▓▓╢╢▓▓▓▓▓╢█▄    ▀█▌█▄                   ░░░
+   ░              █      ▀▄▀█▄ █╢▓▓▓▓██▓▓▓▓╢▓▓▓▓▓█_   █" █                   ░░░
+   ░              ▐▌       "▀▄█╢▓▓▓╢██▓▀▀      ¬¬¬.▐_▄▀ ▐▌                   ░░░
+   ░               █⌐        ▐╣▓▓▓▓▀'    ▄∞ⁿ""ⁿⁿ∞▄_ ▐   █                    ░░░
+   ░                █_       █▓▓▓█▀ _ ▄▀           ⁿ▀   █_                   ░░░
+_ _░                 █▄╒▄   ▐╣▓▓██Γ ▄▀                  █_                   ░░░
+_  ░                  ▀████P▀▀▀▓▀ ╒▀                    █                    ░░░
+_ _░                   ▐▌       █ª  ▄                  "▀▄_                  ░░░
+_  ░                    ▀█_     ▌  █                      █_                 ░░░
+___░                      "▀═▄Γ    ▀▄▄█████▄▄,⌐     ¬▄▄████▌                 ░░░
+ _ ░                         ▐▌      ▀▀██▀██▀-       ▐█████                  ░░░
+___░                         ▐▌          ▀▀           ▀██▀                   ░░░
+___░                         ▐▌                        "█▄,▌                 ░░░
+___░                          ▀█,                  ╓█▀▀▀▀██Γ                j░░░
+___░                            "█_▄▄_             "██████-                 j░░░
+___░                              ▀█████▄▄▄, ▀═▄▄   ▀████▀                  j░░░
+___░                                -▀▀█▀  "██▄▄  ▀▀▄▄▀▀                    j░░░
+___░                                   █▄   █▌ - ▀                          j░░░
+___░                                    '▀▀▀                                j░░░
+___░                                                                        j░░░
+_░░░                                                                        j░░░
+__░░                                                                        j░░░
+__░░                                                                        j░░░
+░_░░                                                                        j░░░
+░░░░                                                                        ,░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░`
   }],
   characters: [
     {
