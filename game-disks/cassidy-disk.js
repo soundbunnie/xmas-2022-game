@@ -348,6 +348,9 @@ const cassidyDisk = () => ({
         
         "Actually, nevermind," he says. "I don't care."`)
       }
+      else if (hasBandaid){
+        println(`The driver glances over at your hand and says, "Cute bandaid."`)
+      }
       if (isBandaged){
         println(`The driver looks at his mirror and his eyes widen very slightly. He turns toward you.
         
