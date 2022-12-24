@@ -320,6 +320,13 @@ const cassidyDisk = () => ({
           println(`The only app on your phone that stands out to you right now is Uber.`)
         }
       }
+    },
+    {
+      name: ['trina', 'dog', 'doggy', 'puppy'],
+      desc: 'doggy!',
+      onTake(){
+        println('If only.')
+      }
     }
     ],
    exits: [{ dir: 'uber', id: 'uber'}]
@@ -327,7 +334,28 @@ const cassidyDisk = () => ({
   {
     name: 'UBER RIDE',
     id: 'uber',
-    desc: `ur in an uber nerd`
+    desc: `The car you enter has a sleek black exterior and comfy grey seats.
+    `,
+    onEnter(){
+      if (isBleeding){
+        println(`The driver looks at his mirror and his eyes widen. He turns toward you.
+        
+        "Uh. Do you need a bandage? You're kind of like, bleeding all over my seats."
+        
+        You look down at your hand, which is still bleeding from Peppers bite. Oops.
+        
+        "Actually, nevermind," he says. "I don't care."`)
+      }
+      if (isBandaged){
+        println(`The driver looks at his mirror and his eyes widen very slightly. He turns toward you.
+        
+        "Woah, what happened there?"
+        
+        You look down at your hand, which is heavily bandaged.
+        
+        "Actually, nevermind," he says. "I don't care."`)
+      }
+    }
   }],
 
   characters: [
